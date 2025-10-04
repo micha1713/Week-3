@@ -1,17 +1,27 @@
 // opdracht 8.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
 #include <stdio.h>
 
 int main() {
-    double s = 1000;    
-    double r = 0.02;    
-    int j;
+    double saldo;
+    double rente;
+    int jaren;
 
-    printf_s("Jaar Saldo\n");
+    printf_s("voer het begisaldo in: ");
+    scanf_s("%lf", &saldo);
 
-    for (j = 1; j <= 15; j++) {
-        s = s + s * r;  
-        printf_s("%d %.2f\n", j, s);
+    printf_s("voer het jaarlijkse rentepercentage in: ");
+    scanf_s("%lf", &rente);
+
+    printf_s("voer het aantal jaren in: ");
+    scanf_s("%d", &jaren);
+
+    printf_s("\nJaar\tSaldo\n");
+
+
+    for (int i = 1; i <= jaren; i++) {
+        saldo = saldo + saldo * (rente / 100.0);
+        printf_s("%d\t%.2lf\n", i, saldo);
     }
 
     return 0;
